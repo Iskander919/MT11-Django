@@ -1,0 +1,234 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Сотрудники кафедры{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Сотрудники кафедры</h1>
+    <div class='featuresprep'>
+        
+
+        {% if person %}
+            {% for el in person %}
+
+                <div class="personalcard">
+                    <div style="height: 75px; width: 100%"><p>{{ el.Job_title }} <br>   </p></div>
+                    <p>{{ el.image. }}</p>
+                    {% if el.image %}
+                       <img src="{{MEDIA_URL}}{{ el.image.url}} " style="width: 147px; height: 220px; margin-bottom:4px">
+                    {% endif %}
+                    <p>{{ el.last_name }}</p>
+                    <p>{{ el.first_name }}</p>
+                    <p>{{ el.patronymic}}</p>
+                    {% if user.is_authenticated %}
+                    <div style="margin-bottom: 20px"><button  class="btn-outline-primary" id="{{ el.mail }}">Смотреть расписание</button></div>
+
+                    {% else %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей.</p>
+        {% endif %}
+
+    </div>
+    <div class="modal" style="color:#000" id="my-modalPa">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btnPa">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ Pa.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>{{ Pa.1.0 }}</td><td>{{ Pa.1.1 }}</td><td>{{ Pa.1.2 }}</td><td>{{ Pa.1.3 }}</td><td>{{ Pa.1.4 }}</td><td>{{ Pa.1.5 }}</td><td>{{ Pa.1.6 }}</td></tr>
+                <tr>
+                    <td>{{ Pa.2.0 }}</td><td>{{ Pa.2.1 }}</td><td>{{ Pa.2.2 }}</td><td>{{ Pa.2.3 }}</td><td>{{ Pa.2.4 }}</td><td>{{ Pa.2.5 }}</td><td>{{ Pa.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ Pa.3.0 }}</td><td>{{ Pa.3.1 }}</td><td>{{ Pa.3.2 }}</td><td>{{ Pa.3.3 }}</td><td>{{ Pa.3.4 }}</td><td>{{ Pa.3.5 }}</td><td>{{ Pa.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ Pa.4.0 }}</td><td>{{ Pa.4.1 }}</td><td>{{ Pa.4.2 }}</td><td>{{ Pa.4.3 }}</td><td>{{ Pa.4.4 }}</td><td>{{ Pa.4.5 }}</td><td>{{ Pa.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ Pa.5.0 }}</td><td>{{ Pa.5.1 }}</td><td>{{ Pa.5.2 }}</td><td>{{ Pa.5.3 }}</td><td>{{ Pa.5.4 }}</td><td>{{ Pa.5.5 }}</td><td>{{ Pa.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ Pa.6.0 }}</td><td>{{ Pa.6.1 }}</td><td>{{ Pa.6.2 }}</td><td>{{ Pa.6.3 }}</td><td>{{ Pa.6.4 }}</td><td>{{ Pa.6.5 }}</td><td>{{ Pa.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ Pa.7.0 }}</td><td>{{ Pa.7.1 }}</td><td>{{ Pa.7.2 }}</td><td>{{ Pa.7.3 }}</td><td>{{ Pa.7.4 }}</td><td>{{ Pa.7.5 }}</td><td>{{ Pa.7.6 }}</td></tr>
+                <tr>
+
+                </tbody>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+    <div class="modal" style="color:#000" id="my-modalMi">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btnMi">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ Mi.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                 <td>{{ Mi.1.0 }}</td><td>{{ Mi.1.1 }}</td><td>{{ Mi.1.2 }}</td><td>{{ Mi.1.3 }}</td><td>{{ Mi.1.4 }}</td><td>{{ Mi.1.5 }}</td><td>{{ Mi.1.6 }}</td></tr>
+                <tr>
+                 <td>{{ Mi.2.0 }}</td><td>{{ Mi.2.1 }}</td><td>{{ Mi.2.2 }}</td><td>{{ Mi.2.3 }}</td><td>{{ Mi.2.4 }}</td><td>{{ Mi.2.5 }}</td><td>{{ Mi.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ Mi.3.0 }}</td><td>{{ Mi.3.1 }}</td><td>{{ Mi.3.2 }}</td><td>{{ Mi.3.3 }}</td><td>{{ Mi.3.4 }}</td><td>{{ Mi.3.5 }}</td><td>{{ Mi.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ Mi.4.0 }}</td><td>{{ Mi.4.1 }}</td><td>{{ Mi.4.2 }}</td><td>{{ Mi.4.3 }}</td><td>{{ Mi.4.4 }}</td><td>{{ Mi.4.5 }}</td><td>{{ Mi.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ Mi.5.0 }}</td><td>{{ Mi.5.1 }}</td><td>{{ Mi.5.2 }}</td><td>{{ Mi.5.3 }}</td><td>{{ Mi.5.4 }}</td><td>{{ Mi.5.5 }}</td><td>{{ Mi.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ Mi.6.0 }}</td><td>{{ Mi.6.1 }}</td><td>{{ Mi.6.2 }}</td><td>{{ Mi.6.3 }}</td><td>{{ Mi.6.4 }}</td><td>{{ Mi.6.5 }}</td><td>{{ Mi.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ Mi.7.0 }}</td><td>{{ Mi.7.1 }}</td><td>{{ Mi.7.2 }}</td><td>{{ Mi.7.3 }}</td><td>{{ Mi.7.4 }}</td><td>{{ Mi.7.5 }}</td><td>{{ Mi.7.6 }}</td></tr>
+                <tr>
+
+                </tbody>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+    <div class="modal" style="color:#000" id="my-modalBe">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btnBe">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ Be.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                 <td>{{ Be.1.0 }}</td><td>{{ Be.1.1 }}</td><td>{{ Be.1.2 }}</td><td>{{ Be.1.3 }}</td><td>{{ Be.1.4 }}</td><td>{{ Be.1.5 }}</td><td>{{ Be.1.6 }}</td></tr>
+                <tr>
+                 <td>{{ Be.2.0 }}</td><td>{{ Be.2.1 }}</td><td>{{ Be.2.2 }}</td><td>{{ Be.2.3 }}</td><td>{{ Be.2.4 }}</td><td>{{ Be.2.5 }}</td><td>{{ Be.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ Be.3.0 }}</td><td>{{ Be.3.1 }}</td><td>{{ Be.3.2 }}</td><td>{{ Be.3.3 }}</td><td>{{ Be.3.4 }}</td><td>{{ Be.3.5 }}</td><td>{{ Be.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ Be.4.0 }}</td><td>{{ Be.4.1 }}</td><td>{{ Be.4.2 }}</td><td>{{ Be.4.3 }}</td><td>{{ Be.4.4 }}</td><td>{{ Be.4.5 }}</td><td>{{ Be.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ Be.5.0 }}</td><td>{{ Be.5.1 }}</td><td>{{ Be.5.2 }}</td><td>{{ Be.5.3 }}</td><td>{{ Be.5.4 }}</td><td>{{ Be.5.5 }}</td><td>{{ Be.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ Be.6.0 }}</td><td>{{ Be.6.1 }}</td><td>{{ Be.6.2 }}</td><td>{{ Be.6.3 }}</td><td>{{ Be.6.4 }}</td><td>{{ Be.6.5 }}</td><td>{{ Be.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ Be.7.0 }}</td><td>{{ Be.7.1 }}</td><td>{{ Be.7.2 }}</td><td>{{ Be.7.3 }}</td><td>{{ Be.7.4 }}</td><td>{{ Be.7.5 }}</td><td>{{ Be.7.6 }}</td></tr>
+                <tr>
+
+
+                </tbody>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+    <div class="modal" style="color:#000" id="my-modalDe">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btnDe">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ De.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                 <td>{{ De.1.0 }}</td><td>{{ De.1.1 }}</td><td>{{ De.1.2 }}</td><td>{{ De.1.3 }}</td><td>{{ De.1.4 }}</td><td>{{ De.1.5 }}</td><td>{{ De.1.6 }}</td></tr>
+                <tr>
+                 <td>{{ De.2.0 }}</td><td>{{ De.2.1 }}</td><td>{{ De.2.2 }}</td><td>{{ De.2.3 }}</td><td>{{ De.2.4 }}</td><td>{{ De.2.5 }}</td><td>{{ De.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ De.3.0 }}</td><td>{{ De.3.1 }}</td><td>{{ De.3.2 }}</td><td>{{ De.3.3 }}</td><td>{{ De.3.4 }}</td><td>{{ De.3.5 }}</td><td>{{ De.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ De.4.0 }}</td><td>{{ De.4.1 }}</td><td>{{ De.4.2 }}</td><td>{{ De.4.3 }}</td><td>{{ De.4.4 }}</td><td>{{ De.4.5 }}</td><td>{{ De.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ De.5.0 }}</td><td>{{ De.5.1 }}</td><td>{{ De.5.2 }}</td><td>{{ De.5.3 }}</td><td>{{ De.5.4 }}</td><td>{{ De.5.5 }}</td><td>{{ De.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ De.6.0 }}</td><td>{{ De.6.1 }}</td><td>{{ De.6.2 }}</td><td>{{ De.6.3 }}</td><td>{{ De.6.4 }}</td><td>{{ De.6.5 }}</td><td>{{ De.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ De.7.0 }}</td><td>{{ De.7.1 }}</td><td>{{ De.7.2 }}</td><td>{{ De.7.3 }}</td><td>{{ De.7.4 }}</td><td>{{ De.7.5 }}</td><td>{{ De.7.6 }}</td></tr>
+                <tr>
+
+                </tbody>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+<script  src="../../../static/main/js/index2.js" defer></script>
+
+    
+{% endblock %}

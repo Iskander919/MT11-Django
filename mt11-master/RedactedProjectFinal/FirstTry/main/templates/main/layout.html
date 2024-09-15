@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/7fd0e84f67.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body style="
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+">
+    <div class="gosenalnoye-menyu">
+        <nav>
+        <p>Электронные технологии в машиностроении</p>
+      <button id="adaptivnae" class="adaptivnae">
+        <div class="unasin"></div>
+        <div class="unasin"></div>
+        </button>
+        <ul>
+                          <li><a href="{% url 'home' %}">Главная</a></li>
+                          <li><a href="{% url 'syllabus' %}">Учебный план</a></li>
+                          {% if user.is_authenticated %}
+                            <li><a href="{% url 'schedule' %}">Расписание</a></li>
+                          {% endif %}
+                          <li><a href="{% url 'news_home' %}">Новости</a></li>
+                          <li><a href="{% url 'personalities' %}">Коллектив</a></li>
+                          {% if user.is_authenticated %}
+                          <a  href="{% url 'logout' %}"><li><button  class="btn-outline-primary">Выход</button><i class='nav-item nav-link' ></i></li></a>
+                          {% else %}
+                            <a  href="{% url 'login' %}"><li><button  class="btn-outline-primary">Вход</button><i class='nav-item nav-link' ></i></li></a>
+                            <a  href="{% url 'register' %}"><li><button  class="btn-outline-primary">Регистрация</button><i class='nav-item nav-link' ></i></li></a>
+                          {% endif %}
+        </ul>
+        </nav>
+      </div>
+
+    <main>
+         {% block content %}
+         {% endblock %}
+    </main>
+</body>
+</html>

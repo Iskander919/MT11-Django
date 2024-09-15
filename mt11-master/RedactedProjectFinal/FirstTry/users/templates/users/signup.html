@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+
+{% block content %}
+<h2 style="   text-align: center; font-size: 50px; font-weight: 900; line-height: 1;   z-index: 1; height: 100%;">Регистрация</h2>
+<div  style="text-align: center">
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <p>
+        {{ field.label_tag }}<br>
+        <div style="text-align: center">{{ field }}</div>
+        {% if field.help_text %}
+        <small style="color: grey">{{ field.help_text | safe }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+        <p style="color: red">{{ error | safe }}</p>
+        {% endfor %}
+    </p>
+    {% endfor %}
+      <button  class="btn">Регистрация</button>
+
+</form>
+</div>
+{% endblock %}

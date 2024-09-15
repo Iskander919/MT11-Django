@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <div class='features'>
+        <h1>{{ article.title }}</h1>
+
+        {% if article.image1 %}
+            <img src="{{MEDIA_URL}}{{ article.image1.url}}">
+        {% endif %}
+
+        <p>{{ article.date }}</p>
+
+        {% if article.image2 %}
+            <img src="{{MEDIA_URL}}{{ article.image2.url}}">
+        {% endif %}
+
+       <p class="left">{{ article.full_text|linebreaks}}</p>
+
+        {% if article.image3 %}
+            <img src="{{MEDIA_URL}}{{ article.image3.url}}">
+        {% endif %}
+
+    </div>
+{% endblock %}

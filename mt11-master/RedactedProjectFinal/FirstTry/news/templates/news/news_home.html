@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+<body style ="background-color: black;">
+
+
+<h1 style="text-align: center; text-align: center; font-size: 68px; font-weight: 900; line-height: 1; z-index: 1; height: 100%; color: black"> Новости</h1>
+    <div class='features1'>
+
+        {% if news %}
+            {% for el in news %}
+                <div class="features"> 
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <a href="{% url 'news-detail' el.id %}"><button  class="btn" style="margin-bottom: 5px;">Читать подробнее</button></a>
+                </div>
+        <br><br><br>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей.</p>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}

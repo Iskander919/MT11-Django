@@ -1,0 +1,174 @@
+
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    {{title3}}
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="wrapper" >
+        <div class="timelist">
+            <h1>Расписание</h1>
+            <div class="timecontainer">
+                <h2>Для бакалавров</h2>
+                <div class="timeblock">
+                    <button id="open-modal-btn" class="btn">Смотреть расписание</button>
+                </div>
+                <h2>Для магистров</h2>
+                <div class="timeblock">
+                    <button id="open-modal-btnM" class="btn">Смотреть расписание</button>
+                </div>
+                <h2>Для аспирантов</h2>
+                <div class="timeblock">
+                    <button id="open-modal-btnA" class="btn">Смотреть расписание</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="modal" style="color:#000" id="my-modal">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btn">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ testtable.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>{{ testtable.1.0 }}</td><td>{{ testtable.1.1 }}</td><td>{{ testtable.1.2 }}</td><td>{{ testtable.1.3 }}</td><td>{{ testtable.1.4 }}</td><td>{{ testtable.1.5 }}</td><td>{{ testtable.1.6 }}</td></tr>
+                <tr>
+                    <td>{{ testtable.2.0 }}</td><td>{{ testtable.2.1 }}</td><td>{{ testtable.2.2 }}</td><td>{{ testtable.2.3 }}</td><td>{{ testtable.2.4 }}</td><td>{{ testtable.2.5 }}</td><td>{{ testtable.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtable.3.0 }}</td><td>{{ testtable.3.1 }}</td><td>{{ testtable.3.2 }}</td><td>{{ testtable.3.3 }}</td><td>{{ testtable.3.4 }}</td><td>{{ testtable.3.5 }}</td><td>{{ testtable.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtable.4.0 }}</td><td>{{ testtable.4.1 }}</td><td>{{ testtable.4.2 }}</td><td>{{ testtable.4.3 }}</td><td>{{ testtable.4.4 }}</td><td>{{ testtable.4.5 }}</td><td>{{ testtable.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtable.5.0 }}</td><td>{{ testtable.5.1 }}</td><td>{{ testtable.5.2 }}</td><td>{{ testtable.5.3 }}</td><td>{{ testtable.5.4 }}</td><td>{{ testtable.5.5 }}</td><td>{{ testtable.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtable.6.0 }}</td><td>{{ testtable.6.1 }}</td><td>{{ testtable.6.2 }}</td><td>{{ testtable.6.3 }}</td><td>{{ testtable.6.4 }}</td><td>{{ testtable.6.5 }}</td><td>{{ testtable.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtable.7.0 }}</td><td>{{ testtable.7.1 }}</td><td>{{ testtable.7.2 }}</td><td>{{ testtable.7.3 }}</td><td>{{ testtable.7.4 }}</td><td>{{ testtable.7.5 }}</td><td>{{ testtable.7.6 }}</td></tr>
+                <tr>
+
+                </tbody>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+     <div class="modal" style="color:#000" id="my-modalM">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btnM">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ testtableM.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>{{ testtableM.1.0 }}</td><td>{{ testtableM.1.1 }}</td><td>{{ testtableM.1.2 }}</td><td>{{ testtableM.1.3 }}</td><td>{{ testtableM.1.4 }}</td><td>{{ testtableM.1.5 }}</td><td>{{ testtableM.1.6 }}</td></tr>
+                <tr>
+                    <td>{{ testtableM.2.0 }}</td><td>{{ testtableM.2.1 }}</td><td>{{ testtableM.2.2 }}</td><td>{{ testtableM.2.3 }}</td><td>{{ testtableM.2.4 }}</td><td>{{ testtableM.2.5 }}</td><td>{{ testtableM.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableM.3.0 }}</td><td>{{ testtableM.3.1 }}</td><td>{{ testtableM.3.2 }}</td><td>{{ testtableM.3.3 }}</td><td>{{ testtableM.3.4 }}</td><td>{{ testtableM.3.5 }}</td><td>{{ testtableM.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableM.4.0 }}</td><td>{{ testtableM.4.1 }}</td><td>{{ testtableM.4.2 }}</td><td>{{ testtableM.4.3 }}</td><td>{{ testtableM.4.4 }}</td><td>{{ testtableM.4.5 }}</td><td>{{ testtableM.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableM.5.0 }}</td><td>{{ testtableM.5.1 }}</td><td>{{ testtableM.5.2 }}</td><td>{{ testtableM.5.3 }}</td><td>{{ testtableM.5.4 }}</td><td>{{ testtableM.5.5 }}</td><td>{{ testtableM.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableM.6.0 }}</td><td>{{ testtableM.6.1 }}</td><td>{{ testtableM.6.2 }}</td><td>{{ testtableM.6.3 }}</td><td>{{ testtableM.6.4 }}</td><td>{{ testtableM.6.5 }}</td><td>{{ testtableM.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableM.7.0 }}</td><td>{{ testtableM.7.1 }}</td><td>{{ testtableM.7.2 }}</td><td>{{ testtableM.7.3 }}</td><td>{{ testtableM.7.4 }}</td><td>{{ testtableM.7.5 }}</td><td>{{ testtableM.7.6 }}</td></tr>
+                <tr>
+
+                </tbody>
+                </tr>
+            </table>
+            </div>
+     </div>
+    <script defer src="../../../static/main/js/index.js"></script>
+    <div class="modal" style="color:#000" id="my-modalA">
+        <div class="modal__box" style="border-radius: 15px;">
+            <button class="modal__close-btn" id="close-my-modal-btnA">x</button>
+            <table class="table">
+                <col width="150px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+                <col width="200px" />
+
+
+                <thead>
+                <tr>
+                <th>{{ testtableM.0.0 }}</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>{{ testtableA.1.0 }}</td><td>{{ testtableA.1.1 }}</td><td>{{ testtableA.1.2 }}</td><td>{{ testtableA.1.3 }}</td><td>{{ testtableA.1.4 }}</td><td>{{ testtableA.1.5 }}</td><td>{{ testtableA.1.6 }}</td></tr>
+                <tr>
+                    <td>{{ testtableA.2.0 }}</td><td>{{ testtableA.2.1 }}</td><td>{{ testtableA.2.2 }}</td><td>{{ testtableA.2.3 }}</td><td>{{ testtableA.2.4 }}</td><td>{{ testtableA.2.5 }}</td><td>{{ testtableA.2.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableA.3.0 }}</td><td>{{ testtableA.3.1 }}</td><td>{{ testtableA.3.2 }}</td><td>{{ testtableA.3.3 }}</td><td>{{ testtableA.3.4 }}</td><td>{{ testtableA.3.5 }}</td><td>{{ testtableA.3.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableA.4.0 }}</td><td>{{ testtableA.4.1 }}</td><td>{{ testtableA.4.2 }}</td><td>{{ testtableA.4.3 }}</td><td>{{ testtableA.4.4 }}</td><td>{{ testtableA.4.5 }}</td><td>{{ testtableA.4.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableA.5.0 }}</td><td>{{ testtableA.5.1 }}</td><td>{{ testtableA.5.2 }}</td><td>{{ testtableA.5.3 }}</td><td>{{ testtableA.5.4 }}</td><td>{{ testtableA.5.5 }}</td><td>{{ testtableA.5.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableA.6.0 }}</td><td>{{ testtableA.6.1 }}</td><td>{{ testtableA.6.2 }}</td><td>{{ testtableA.6.3 }}</td><td>{{ testtableA.6.4 }}</td><td>{{ testtableA.6.5 }}</td><td>{{ testtableA.6.6 }}</td></tr>
+                <tr>
+                 <td>{{ testtableA.7.0 }}</td><td>{{ testtableA.7.1 }}</td><td>{{ testtableA.7.2 }}</td><td>{{ testtableA.7.3 }}</td><td>{{ testtableA.7.4 }}</td><td>{{ testtableA.7.5 }}</td><td>{{ testtableA.7.6 }}</td></tr>
+                <tr>
+
+                </tbody>
+                </tr>
+            </table>
+            </div>
+     </div>
+</body>
+{% endblock %}
